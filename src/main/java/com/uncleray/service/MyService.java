@@ -1,6 +1,6 @@
 package com.uncleray.service;
 
-import com.uncleray.dao.MyJpaRepository;
+import com.uncleray.dao.PersonRepository;
 import com.uncleray.entity.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
@@ -17,7 +17,7 @@ import java.util.List;
 public class MyService {
 
     @Autowired
-    MyJpaRepository repository;
+    PersonRepository repository;
 
     public List<Person> findSearch(Person model) {
 

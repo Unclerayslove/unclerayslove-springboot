@@ -1,7 +1,8 @@
 package com.uncleray;
 
-import com.uncleray.dao.MyJpaRepository;
+import com.uncleray.dao.PersonRepository;
 import com.uncleray.entity.Person;
+import com.uncleray.service.DemoService;
 import com.uncleray.service.MyService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,6 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Optional;
 
 @SpringBootTest
 class MainApplicationTests {
@@ -28,22 +28,33 @@ class MainApplicationTests {
     }
 
     @Autowired
-    MyJpaRepository repository;
+    PersonRepository repository;
 
     @Test
     void myRepository() {
         Person person = new Person();
-        person.setName("刘亦菲");
-        person.setAge(23);
+        person.setName("王妮");
+        person.setAge(27);
         person.setSex('女');
-        person.setGraduation("研究生/硕士");
-        person.setAddress("重庆市");
+        person.setGraduation("专科/无");
+        person.setAddress("深圳市");
         Person save = repository.save(person);
         System.out.println(save);
     }
 
     @Autowired
+    DemoService demoService;
+    @Test
+    void test() {
+        List<Person> person = repository.testPerson("研究");
+        System.out.println(person);
+        int i = demoService.updatePerson(26, "雷佩");
+        System.out.println(i);
+    }
+
+    @Autowired
     MyService service;
+
     @Test
     void query() {
 

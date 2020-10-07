@@ -1,16 +1,14 @@
 package com.uncleray.controller;
 
-import com.uncleray.dao.MyJpaRepository;
+import com.uncleray.dao.PersonRepository;
 import com.uncleray.entity.Person;
 import com.uncleray.pojo.User;
 import com.uncleray.service.DemoService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityManager;
@@ -31,7 +29,7 @@ public class DemoController {
     @Autowired
     private DemoService demoService;
     @Autowired
-    MyJpaRepository repository;
+    PersonRepository repository;
     @Autowired
     EntityManager entityManager;
 
@@ -63,6 +61,8 @@ public class DemoController {
         Pageable pageable = PageRequest.of(request.get("page"), request.get("size"));
         //定制SQL，entityManager就相当于sqlSession，用来操作数据库
         String sql = "select * from uncle_person";
+//        Query query1 = entityManager.createQuery(sql);
+//        query1.getResultList();
         Query query = entityManager.createNativeQuery(sql, Person.class);
         List list = query.getResultList();
         System.out.println(list);

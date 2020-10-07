@@ -1,10 +1,11 @@
 package com.uncleray.service;
 
-import com.uncleray.dao.MyJpaRepository;
+import com.uncleray.dao.PersonRepository;
 import com.uncleray.entity.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.UUID;
 
 /**
@@ -14,8 +15,15 @@ import java.util.UUID;
 @Service
 public class DemoService {
 
+    @Autowired
+    PersonRepository repository;
 
     public String getkey() {
-        return UUID.randomUUID().toString().substring(0,9);
+        return UUID.randomUUID().toString().substring(0, 9);
+    }
+
+    @Transactional
+    public int updatePerson(Integer age, String name) {
+        return repository.updatePersonByName(age, name);
     }
 }

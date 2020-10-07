@@ -14,7 +14,6 @@ import javax.sql.rowset.Predicate;
 @Entity
 @Proxy(lazy = false)
 @Table(name = "uncle_person")
-//@NamedQuery(name = "", query = "select p from Person p")
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
