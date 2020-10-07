@@ -12,10 +12,6 @@ public class TechnologyShareDemo {
         Map map = new HashMap();
         Random random = new Random();
         int nextInt = random.nextInt(28);
-        return ""+nextInt;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(getSharer());
+        return "" + nextInt;
     }
 }

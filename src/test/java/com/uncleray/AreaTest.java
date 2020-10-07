@@ -35,14 +35,20 @@ public class AreaTest {
             repository.save(area);
         }
         long end = System.currentTimeMillis();
-        System.out.println("一共用时："+(end-start)/1000);
+        System.out.println("一共用时：" + (end - start) / 1000);
     }
 
     @Test
     void test() {
-        Page<Area> all = repository.findAll(PageRequest.of(0,10));
+        Page<Area> all = repository.findAll(PageRequest.of(0, 10));
         for (Area area : all) {
             System.out.println(area);
         }
+    }
+
+    @Test
+    void testJPQL() {
+        List<Area> areaList = repository.testAreas("成都", 8);
+        System.out.println(areaList);
     }
 }
