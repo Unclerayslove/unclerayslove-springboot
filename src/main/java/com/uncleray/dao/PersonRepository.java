@@ -22,14 +22,15 @@ public interface PersonRepository extends
     @Query(value = "select * from uncle_person where name=?1 and age=?2", nativeQuery = true)
     List<Person> testPerson(String name, int age);
 
-    //直接写JPQL语句，通配符传参，表明参数位置
+    //直接写JPQL语句，按照位置传参，占位符传参，表明参数位置
     @Query("from Person where sex = ?1")
     List<Person> testPerson(Character sex);
 
+    //按照名字传参 :xxxx   @Param("xxxx")
     @Query("from Person where graduation like %:graduation%")
     List<Person> testPerson(@Param("graduation") String graduation);
 
-    //更新的SQL语句，不是JPQL语句 原生的SQL语句，需要加上Modifying注解。并且需要添加事务处理
+    //更新的SQL语句，不是JPQL语句 是原生的SQL语句，需要加上Modifying注解。并且需要添加事务处理
     @Modifying
     @Query(value = "update uncle_person as p set p.age = :age where p.name = :name", nativeQuery = true)
     int updatePersonByName(@Param("age") Integer age, @Param("name") String name);

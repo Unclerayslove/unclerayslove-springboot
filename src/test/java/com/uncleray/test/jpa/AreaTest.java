@@ -1,4 +1,4 @@
-package com.uncleray;
+package com.uncleray.test.jpa;
 
 import com.uncleray.dao.AreaRepository;
 import com.uncleray.entity.Area;

@@ -6,6 +6,7 @@ import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
 import javax.sql.rowset.Predicate;
+import java.io.Serializable;
 
 /**
  * @author uncle
@@ -14,7 +15,7 @@ import javax.sql.rowset.Predicate;
 @Entity
 @Proxy(lazy = false)
 @Table(name = "uncle_person")
-public class Person {
+public class Person implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
