@@ -1,7 +1,7 @@
 package com.uncleray.service.impl;
 
-import com.uncleray.dao.AreaRepository;
-import com.uncleray.entity.Area;
+import com.uncleray.dao.repository.AreaRepository;
+import com.uncleray.model.pojo.Area;
 import com.uncleray.service.AreaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;

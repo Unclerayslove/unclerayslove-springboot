@@ -1,7 +1,6 @@
-package com.uncleray.dao;
+package com.uncleray.dao.repository;
 
-import com.uncleray.entity.Area;
-import org.springframework.data.jpa.domain.Specification;
+import com.uncleray.model.pojo.Area;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;

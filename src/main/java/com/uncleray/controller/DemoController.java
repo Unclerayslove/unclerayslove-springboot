@@ -1,8 +1,8 @@
 package com.uncleray.controller;
 
-import com.uncleray.dao.PersonRepository;
-import com.uncleray.entity.Person;
-import com.uncleray.pojo.User;
+import com.uncleray.dao.repository.PersonRepository;
+import com.uncleray.model.pojo.Person;
+import com.uncleray.model.pojo.User;
 import com.uncleray.service.DemoService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

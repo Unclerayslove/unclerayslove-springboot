@@ -1,17 +1,13 @@
 package com.uncleray.test.redis;
 
 import com.alibaba.fastjson.JSONObject;
-import com.uncleray.entity.Person;
+import com.uncleray.model.pojo.Person;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.core.BoundValueOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
-import org.springframework.web.client.RestTemplate;
 
 /**
  * @program: uncle-ray

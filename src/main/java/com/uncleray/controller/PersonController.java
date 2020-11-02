@@ -1,6 +1,6 @@
 package com.uncleray.controller;
 
-import com.uncleray.entity.Person;
+import com.uncleray.model.pojo.Person;
 import com.uncleray.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

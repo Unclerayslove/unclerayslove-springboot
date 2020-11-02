@@ -1,6 +1,6 @@
 package com.uncleray.controller;
 
-import com.uncleray.pojo.User;
+import com.uncleray.model.pojo.User;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

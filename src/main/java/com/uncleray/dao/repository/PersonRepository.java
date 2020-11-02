@@ -1,15 +1,12 @@
-package com.uncleray.dao;
+package com.uncleray.dao.repository;
 
-import com.uncleray.entity.Person;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.uncleray.model.pojo.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
 import java.util.List;
 
 /**

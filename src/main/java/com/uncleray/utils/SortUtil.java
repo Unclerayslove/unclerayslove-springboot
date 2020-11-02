@@ -1,9 +1,7 @@
 package com.uncleray.utils;
 
-import com.uncleray.pojo.User;
+import com.uncleray.model.pojo.User;
 import org.springframework.util.Assert;
-
-import java.util.Arrays;
 
 /**
  * @program: uncle-ray

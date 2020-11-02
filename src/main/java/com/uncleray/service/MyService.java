@@ -1,7 +1,7 @@
 package com.uncleray.service;
 
-import com.uncleray.dao.PersonRepository;
-import com.uncleray.entity.Person;
+import com.uncleray.dao.repository.PersonRepository;
+import com.uncleray.model.pojo.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;

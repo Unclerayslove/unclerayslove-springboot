@@ -1,9 +1,11 @@
 package com.uncleray;
 
-import com.uncleray.dao.PersonRepository;
-import com.uncleray.entity.Person;
+import com.uncleray.model.pojo.Person;
+import com.uncleray.result.ResultCode;
+import com.uncleray.dao.repository.PersonRepository;
 import com.uncleray.service.DemoService;
 import com.uncleray.service.MyService;
+import com.uncleray.service.PersonService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -29,9 +31,12 @@ class MainApplicationTests {
 
     @Autowired
     PersonRepository repository;
+    @Autowired
+    PersonService personService;
 
     @Test
     void myRepository() {
+        personService.deleteBatchPersons();
         Person person = new Person();
         person.setName("王妮");
         person.setAge(27);
@@ -40,10 +45,17 @@ class MainApplicationTests {
         person.setAddress("深圳市");
         Person save = repository.save(person);
         System.out.println(save);
+        personService.savePersons();
+    }
+
+    @Test
+    void delete() {
+        personService.deleteBatchPersons();
     }
 
     @Autowired
     DemoService demoService;
+
     @Test
     void test() {
         List<Person> person = repository.testPerson("研究");
@@ -77,6 +89,12 @@ class MainApplicationTests {
             System.out.println(person);
         }
 
+    }
+
+    @Test
+    void enumTest() {
+        String success = ResultCode.SUCCESS.getMessage();
+        System.out.println(success);
     }
 
 }

@@ -2,7 +2,7 @@ package com.uncleray.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.json.JsonMapper;
-import com.uncleray.entity.Person;
+import com.uncleray.model.pojo.Person;
 
 import java.util.HashMap;
 import java.util.Map;
