@@ -1,4 +1,4 @@
-package com.uncleray.exception;
+package com.uncleray.config.exception;
 
 public class BaseException extends RuntimeException{
     private int code;

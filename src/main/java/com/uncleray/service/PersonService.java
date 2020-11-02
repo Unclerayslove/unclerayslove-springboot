@@ -62,10 +62,4 @@ public class PersonService {
         System.out.println("删除成功");
     }
 
-
-    public static void main(String[] args) {
-        new PersonService().savePersons();
-    }
-
-
 }

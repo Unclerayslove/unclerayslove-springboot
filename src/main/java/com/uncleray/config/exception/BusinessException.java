@@ -1,4 +1,4 @@
-package com.uncleray.exception;
+package com.uncleray.config.exception;
 
 /**
  * @program: uncle-ray

@@ -1,6 +1,5 @@
-package com.uncleray.exception;
+package com.uncleray.config.exception;
 
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 

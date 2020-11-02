@@ -30,6 +30,8 @@ spring:
 #        enable_lazy_load_no_trans: true
 #        hbm2ddl:
 #          auto: create
-
-
+springfox:
+  documentation:
+    swagger-ui:
+      base-url:
 

@@ -17,10 +17,6 @@ public class DemoService {
     @Autowired
     PersonRepository repository;
 
-    public String getkey() {
-        return UUID.randomUUID().toString().substring(0, 9);
-    }
-
     @Transactional
     public int updatePerson(Integer age, String name) {
         return repository.updatePersonByName(age, name);
