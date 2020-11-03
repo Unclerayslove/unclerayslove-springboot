@@ -1,4 +1,4 @@
-package com.uncleray.utils;
+package com.uncleray.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.*;
@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
  * @create: 2020-10-29 22:19
  */
 @Component
-public class RedisUtil {
+public class RedisUtils {
 
     @Autowired
     RedisTemplate<String, Object> redisTemplate;
@@ -174,7 +174,7 @@ public class RedisUtil {
      * @param item 项 不能为null
      * @return 值
      */
-    public Object hget(String key, String item) {
+    public Object hGet(String key, String item) {
         return redisTemplate.opsForHash().get(key, item);
     }
 
@@ -184,7 +184,7 @@ public class RedisUtil {
      * @param key 键
      * @return 对应的多个键值
      */
-    public Map<Object, Object> hmget(String key) {
+    public Map<Object, Object> hmGet(String key) {
         return redisTemplate.opsForHash().entries(key);
     }
 
@@ -195,7 +195,7 @@ public class RedisUtil {
      * @param map 对应多个键值
      * @return true 成功 false 失败
      */
-    public boolean hmset(String key, Map<String, Object> map) {
+    public boolean hmSet(String key, Map<String, Object> map) {
         try {
             redisTemplate.opsForHash().putAll(key, map);
             return true;
@@ -213,7 +213,7 @@ public class RedisUtil {
      * @param time 时间(秒)
      * @return true成功 false失败
      */
-    public boolean hmset(String key, Map<String, Object> map, long time) {
+    public boolean hmSet(String key, Map<String, Object> map, long time) {
         try {
             redisTemplate.opsForHash().putAll(key, map);
             if (time > 0) {
@@ -234,7 +234,7 @@ public class RedisUtil {
      * @param value 值
      * @return true 成功 false失败
      */
-    public boolean hset(String key, String item, Object value) {
+    public boolean hSet(String key, String item, Object value) {
         try {
             redisTemplate.opsForHash().put(key, item, value);
             return true;
@@ -253,7 +253,7 @@ public class RedisUtil {
      * @param time  时间(秒) 注意:如果已存在的hash表有时间,这里将会替换原有的时间
      * @return true 成功 false失败
      */
-    public boolean hset(String key, String item, Object value, long time) {
+    public boolean hSet(String key, String item, Object value, long time) {
         try {
             redisTemplate.opsForHash().put(key, item, value);
             if (time > 0) {
@@ -272,7 +272,7 @@ public class RedisUtil {
      * @param key  键 不能为null
      * @param item 项 可以使多个 不能为null
      */
-    public void hdel(String key, Object... item) {
+    public void hDel(String key, Object... item) {
         redisTemplate.opsForHash().delete(key, item);
     }
 
@@ -295,7 +295,7 @@ public class RedisUtil {
      * @param by   要增加几(大于0)
      * @return
      */
-    public double hincr(String key, String item, long by) {
+    public double hIncr(String key, String item, long by) {
         return redisTemplate.opsForHash().increment(key, item, by);
     }
 
@@ -307,7 +307,7 @@ public class RedisUtil {
      * @param by   要减少记(小于0)
      * @return
      */
-    public double hdecr(String key, String item, long by) {
+    public double hDecr(String key, String item, long by) {
         return redisTemplate.opsForHash().increment(key, item, -by);
     }
 
@@ -587,6 +587,24 @@ public class RedisUtil {
 
 
     /****************** zSet start ****************/
+
+    /**
+     * zSet新增一个值
+     *
+     * @param key
+     * @param score
+     * @param value
+     * @return
+     */
+    public boolean zAdd(String key, double score, Object value) {
+        try {
+            redisTemplate.opsForZSet().add(key, value, score);
+            return true;
+        } catch (Exception exception) {
+            exception.printStackTrace();
+            return false;
+        }
+    }
 
     /****************** List end ****************/
 

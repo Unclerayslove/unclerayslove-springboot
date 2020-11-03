@@ -1,7 +1,7 @@
 package com.uncleray;
 
 import com.uncleray.model.pojo.Person;
-import com.uncleray.result.ResultCode;
+import com.uncleray.result.ResultCodeEnum;
 import com.uncleray.dao.repository.PersonRepository;
 import com.uncleray.service.DemoService;
 import com.uncleray.service.MyService;
@@ -93,7 +93,7 @@ class MainApplicationTests {
 
     @Test
     void enumTest() {
-        String success = ResultCode.SUCCESS.getMessage();
+        String success = ResultCodeEnum.SUCCESS.getMessage();
         System.out.println(success);
     }
 

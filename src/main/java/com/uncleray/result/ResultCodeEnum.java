@@ -1,6 +1,6 @@
 package com.uncleray.result;
 
-public enum ResultCode {
+public enum ResultCodeEnum {
 
     SUCCESS(20000, "成功"),
     FAILED(20001, "失败");
@@ -8,7 +8,7 @@ public enum ResultCode {
     private int code;
     private String message;
 
-    ResultCode(int code, String message) {
+    ResultCodeEnum(int code, String message) {
         this.code = code;
         this.message = message;
     }

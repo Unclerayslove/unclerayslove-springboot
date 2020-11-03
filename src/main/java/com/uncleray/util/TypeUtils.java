@@ -1,13 +1,11 @@
-package com.uncleray.utils;
+package com.uncleray.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.json.JsonMapper;
-import com.uncleray.model.pojo.Person;
 
-import java.util.HashMap;
 import java.util.Map;
 
-public class JsonMapToObject {
+public class TypeUtils {
 
     public static <T> T map2Object(Map<String, Object> map, Class<T> tClass) {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -21,12 +19,4 @@ public class JsonMapToObject {
         return value;
     }
 
-    public static void main(String[] args) {
-        Map<String, Object> map = new HashMap<>();
-        map.put("name", 12);
-        Person person = map2Object(map, Person.class);
-        System.out.println(person);
-        Person person1 = json2Object(map, Person.class);
-        System.out.println(person1);
-    }
 }

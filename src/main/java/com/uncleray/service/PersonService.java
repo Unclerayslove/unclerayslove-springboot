@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PersonService {
@@ -58,6 +59,8 @@ public class PersonService {
         ids.add(12);
         ids.add(14);
         List<Person> allById = repository.findAllById(ids);
+        Optional<Person> byId = repository.findById(2);
+        boolean present = byId.isPresent();
         repository.deleteInBatch(allById);
         System.out.println("删除成功");
     }

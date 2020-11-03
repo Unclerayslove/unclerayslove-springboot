@@ -1,4 +1,4 @@
-package com.uncleray.utils;
+package com.uncleray.util;
 
 import com.uncleray.model.pojo.User;
 import org.springframework.util.Assert;
@@ -9,7 +9,7 @@ import org.springframework.util.Assert;
  * @author: lei pei
  * @create: 2020-10-14 21:01
  */
-public class SortUtil {
+public class SortUtils {
 
     public static int[] bubbleSort(int[] array) {
         for (int i = 0; i < array.length; i++) {
@@ -43,11 +43,5 @@ public class SortUtil {
         }
         return arrays;
     }
-
-    public static void main(String[] args) {
-        User user = null;
-        Assert.notNull(null, "用户不存在。");
-    }
-
 
 }
