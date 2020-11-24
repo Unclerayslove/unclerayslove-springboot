@@ -74,19 +74,46 @@
             <version>3.0.0</version>
         </dependency>-->
 
-        <!-- springfox-boot-starter包含了上面上面依赖 -->
+        <!-- springfox-boot-starter包含了springfox-swagger2和springfox-swagger-ui依赖
+            3.0.0是2020年7月 -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
             <version>3.0.0</version>
         </dependency>
-        <!-- 也可以用这个ui代替swagger-ui -->
+        <!-- 也可以用 肖玉民 这个swagger-bootstrap-ui代替swagger-ui 界面更简约好看一些 1.9.6是2019最后版本暂无更新
+            在GitHub上可以关注 详细文档说明请参考：http://www.xiaominfo.com/swagger-bootstrap-ui/
+            访问路径为 /doc.html -->
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>swagger-bootstrap-ui</artifactId>
             <version>1.9.6</version>
         </dependency>
         <!-- swagger2 end-->
+
+        <!-- mybatis/mybatis-plus -->
+        <!--<dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.1.2</version>
+        </dependency>-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.2.0</version>
+        </dependency>
+
+        <!-- JWT Token认证 -->
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>3.10.3</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -99,11 +126,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!--<dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>2.1.2</version>
-        </dependency>-->
+
 
     </dependencies>
 
@@ -112,7 +135,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.2.2.RELEASE</version>
                 <configuration>
                     <fork>true</fork>
                 </configuration>

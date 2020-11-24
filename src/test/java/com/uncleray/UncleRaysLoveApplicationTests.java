@@ -16,7 +16,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @SpringBootTest
-class MainApplicationTests {
+class UncleRaysLoveApplicationTests {
 
     @Autowired
     DataSource dataSource;
