@@ -1,7 +1,7 @@
 package com.uncleray.test.redis;
 
 import com.alibaba.fastjson.JSONObject;
-import com.uncleray.model.pojo.Person;
+import com.uncleray.web.model.pojo.Person;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

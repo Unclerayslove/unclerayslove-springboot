@@ -12,16 +12,16 @@ spring:
     password: 123456
     hikari:
       maximum-pool-size: 20
-  jpa:
-    database: mysql
-    show-sql: true
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        format_sql: true
-#配置数据的方言，这里是MySQL，还有比如Informix、Oracle、DB2等数据库
-        dialect: org.hibernate.dialect.MySQL5Dialect
+#  jpa:
+#    database: mysql
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        format_sql: true
+##配置数据的方言，这里是MySQL，还有比如Informix、Oracle、DB2等数据库
+#        dialect: org.hibernate.dialect.MySQL5Dialect
   redis:
     host: 127.0.0.1
     port: 6379
