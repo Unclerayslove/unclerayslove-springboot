@@ -11,9 +11,19 @@ import org.springframework.boot.test.context.SpringBootTest;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.function.Consumer;
+import java.util.function.Function;
 
 @SpringBootTest
 class UncleRaysLoveApplicationTests {
+
+    public static void main(String[] args) {
+        //常见函数式接口
+        Consumer consumer = o -> System.out.println("Consumer函数式接口");
+        String s = "qwerttyyui";
+        Function<String,Integer> function = o -> o.length();
+        System.out.println(function.apply(s));
+    }
 
     @Autowired
     DataSource dataSource;

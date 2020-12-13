@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
  * @author: lei pei
  * @create: 2020-11-02 20:40
  */
-@Repository
+//@Repository
 public interface AreaMapper extends BaseMapper<Area> {
 }
