@@ -1,6 +1,6 @@
 package com.uncleray.config.exception;
 
-import com.uncleray.result.Result;
+import com.uncleray.result.ApiResult;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindException;
@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(value = Exception.class)
-    public ResponseEntity<Result> exceptionHandler(Exception exception, HttpServletResponse response) {
+    public ResponseEntity<ApiResult> exceptionHandler(Exception exception, HttpServletResponse response) {
         int code = 400;
         String message = "";
         if (exception instanceof BindException) {
@@ -44,7 +44,7 @@ public class GlobalExceptionHandler {
             exception.printStackTrace();
             message = exception.getMessage();
         }
-        return new ResponseEntity<>(new Result(code, message), HttpStatus.valueOf(response.getStatus()));
+        return new ResponseEntity<>(new ApiResult(code, message), HttpStatus.valueOf(response.getStatus()));
     }
 
 }

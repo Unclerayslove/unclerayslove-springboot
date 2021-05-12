@@ -1,6 +1,6 @@
 package com.uncleray.web.controller;
 
-import com.uncleray.result.Result;
+import com.uncleray.result.ApiResult;
 import com.uncleray.util.JWTUtils;
 import com.uncleray.web.model.query.User;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class JwtController {
 
     @PostMapping("/user/login")
-    public Result login(@RequestBody User user) {
+    public ApiResult login(@RequestBody User user) {
         String token = JWTUtils.sign(user);
-        return new Result(200, "登录成功", token);
+        return new ApiResult(200, "登录成功", token);
     }
 }

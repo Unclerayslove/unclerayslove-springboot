@@ -13,12 +13,12 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Result {
+public class ApiResult {
     private int code = 0;
     private String message = "success";
     private Object data = null;
 
-    public Result(int code, String message) {
+    public ApiResult(int code, String message) {
         this.code = code;
         this.message = message;
         this.data = "nothing";

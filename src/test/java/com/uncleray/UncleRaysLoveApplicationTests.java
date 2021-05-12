@@ -2,7 +2,7 @@ package com.uncleray;
 
 import com.uncleray.web.dao.mapper.PersonMapper;
 import com.uncleray.web.model.pojo.Person;
-import com.uncleray.result.ResultCodeEnum;
+import com.uncleray.result.ResultEnum;
 import com.uncleray.web.service.impl.PersonServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,7 +67,7 @@ class UncleRaysLoveApplicationTests {
 
     @Test
     void enumTest() {
-        String success = ResultCodeEnum.SUCCESS.getMessage();
+        String success = ResultEnum.SUCCESS.getMessage();
         System.out.println(success);
     }
 
