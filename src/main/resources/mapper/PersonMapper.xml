@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.uncleray.web.dao.mapper.PersonMapper">
+
+    <select id="selectPersons" resultType="com.uncleray.web.model.pojo.Person">
+        SELECT * FROM uncle_person WHERE age > 27
+    </select>
+    <select id="getPersonPageList" parameterType="com.uncleray.web.model.query.PersonPageReq"
+            resultType="com.uncleray.web.model.vo.PersonVO">
+        select p.name,p.age,p.graduation,a.address from uncle_person p
+        left join area a on a.area_id=p.id
+        where 1=1
+    </select>
+</mapper>
